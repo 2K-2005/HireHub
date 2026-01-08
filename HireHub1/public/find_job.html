@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Find Jobs - HireHub</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .search-wrap { max-width:1000px; margin:28px auto; padding:18px; background:#0f1720; border-radius:10px; }
+    .filters { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:14px; }
+    .filters > * { flex:1 1 220px; }
+    input, select { width:100%; padding:10px; border-radius:8px; border:1px solid #2b3440; background:#0d1114; color:#fff; }
+    button.search-btn { background:#00c29a; color:#05120a; border:none; padding:10px 16px; border-radius:8px; cursor:pointer; }
+    .jobs { max-width:1000px; margin:18px auto; }
+    .job-card { background:#12161a; padding:16px; border-radius:8px; margin-bottom:12px; border:1px solid #20262b; }
+    .job-row { display:flex; justify-content:space-between; gap:12px; align-items:center; flex-wrap:wrap; }
+    .job-meta { color:#9aa5b1; font-size:14px; }
+    .job-actions button { margin-left:8px; padding:8px 10px; border-radius:6px; border:none; cursor:pointer; }
+    .btn-view { background:#2980b9; color:#fff; }
+    .btn-apply { background:#238636; color:#fff; }
+    .empty { color:#9aa5b1; padding:18px; text-align:center; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="search-wrap">
+      <h1>Find Jobs</h1>
+      <p class="small">Search and filter available job listings by type, location, and keyword.</p>
+
+      <div class="filters">
+        <input id="q" type="search" placeholder="Keyword (title, description, skills...)" />
+        <select id="jobType">
+          <option value="all">All types</option>
+          <option value="job">Full-Time Job</option>
+          <option value="internship">Internship</option>
+        </select>
+        <input id="location" placeholder="Location (city, remote, etc.)" />
+        <div style="flex:0 0 160px">
+          <button id="searchBtn" class="search-btn">Search</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="jobs" id="jobsList">
+      <div class="empty">Enter search terms or press Search to see listings.</div>
+    </section>
+  </main>
+
+  <script src="/js/find_jobs.js"></script>
+</body>
+</html>

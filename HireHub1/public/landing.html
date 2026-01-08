@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>HireHub</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header>
+  <div class="nav-container">
+    <div>💼 <strong>HireHub</strong></div>
+    <div class="nav-links">
+      <a href="/login.html" class="btn-login">Login</a>
+      <a href="/signup.html" class="btn-signup">Sign Up</a>
+    </div>
+  </div>
+</header>
+
+<main class="container" style="text-align:center;">
+  <h1>Find Your Dream Job Today</h1>
+  <p class="small">Thousands of jobs from top companies</p>
+  <div style="margin-top:16px;">
+    <input placeholder="Job title or location" style="width:400px;padding:12px;border-radius:8px;">
+    <button class="btn-signup" onclick="location.href='/login.html'">Search Jobs</button>
+  </div>
+</main>
+
+<script>
+async function updateNavbar() {
+  const navLinks = document.querySelector(".nav-links");
+  const token = localStorage.getItem("token");
+  if (!navLinks) return;
+  if (!token) return;
+  try {
+    const res = await fetch("/auth/me", { headers: { "Authorization": "Bearer " + token }});
+    if (!res.ok) { localStorage.removeItem("token"); return; }
+    const user = await res.json();
+    navLinks.innerHTML = "";
+    const dash = document.createElement("a");
+    dash.className = "btn-login";
+    dash.textContent = "Dashboard";
+    dash.href = user.role === "fresher" ? "/fresher.html" : "/employer.html";
+    const logout = document.createElement("a");
+    logout.className = "btn-signup";
+    logout.textContent = "Logout";
+    logout.href = "#";
+    logout.onclick = () => { localStorage.removeItem("token"); window.location.reload(); };
+    navLinks.appendChild(dash);
+    navLinks.appendChild(logout);
+  } catch (err) { console.error(err); }
+}
+updateNavbar();
+</script>
+</body>
+</html>

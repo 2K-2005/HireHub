@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Login - HireHub</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="container" style="max-width:400px;margin:80px auto;">
+  <h1 align="center">💼 HireHub</h1>
+  <h2>Login</h2>
+  <input id="username" placeholder="Username">
+  <input id="password" type="password" placeholder="Password">
+  <div style="display:flex; gap:8px; margin-top:12px;">
+    <button onclick="login()" style="flex:1; background:#238636;">Login</button>
+    <button onclick="location.href='/signup.html'" style="flex:1; background:#2b6cb0;">Sign Up</button>
+  </div>
+</div>
+
+<script>
+(async function redirectIfLoggedIn(){
+  const token = localStorage.getItem("token");
+  if (!token) return;
+  try {
+    const res = await fetch("/auth/me", { headers: { "Authorization": "Bearer " + token }});
+    if (!res.ok) return;
+    const user = await res.json();
+    if (user.role === "fresher") window.location.href = "/fresher.html";
+    if (user.role === "employer") window.location.href = "/employer.html";
+  } catch (err) {}
+})();
+
+async function login() {
+  let username = document.getElementById("username").value.trim();
+  let password = document.getElementById("password").value.trim();
+  if (!username || !password) return alert("Fill all fields");
+  const res = await fetch("/auth/login", {
+    method: "POST",
+    headers: {"Content-Type":"application/json"},
+    body: JSON.stringify({ username, password })
+  });
+  const data = await res.json();
+  if (!data.token) return alert(data.msg || "Login failed");
+  localStorage.setItem("token", data.token);
+  localStorage.setItem("username", data.username);
+  localStorage.setItem("role", data.role);
+  if (data.role === "fresher") window.location.href = "/fresher.html";
+  else window.location.href = "/employer.html";
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Applications - HireHub</title>
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .container { max-width:1000px; margin:28px auto; padding:20px; background:#12161a; border-radius:10px; }
+    .app-card { background:#0f1720; padding:12px; border-radius:8px; margin-bottom:12px; }
+    .actions button { margin-left:8px; padding:8px 10px; border-radius:6px; border:none; cursor:pointer; }
+    .btn-shortlist { background:#f39c12; color:#fff; }
+    .btn-reject { background:#c0392b; color:#fff; }
+    .btn-hire { background:#27ae60; color:#fff; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button onclick="location.href='/dashboard.html'">Back</button>
+    <h1>Applications Received</h1>
+
+    <div style="margin:10px 0">
+      <label>Select Job</label>
+      <select id="jobSelect"></select>
+      <button id="loadApps">Load Applications</button>
+      <button id="loadAll">Load All Applications</button>
+    </div>
+
+    <div id="appsContainer">Select a job and click "Load Applications"</div>
+  </div>
+
+  <script src="/js/employer_apps.js"></script>
+</body>
+</html>

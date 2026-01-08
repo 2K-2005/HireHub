@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Job Details - HireHub</title>
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .container { max-width:900px; margin:28px auto; padding:20px; background:#12161a; border-radius:10px; }
+    .job-card { padding:18px; background:#0f1720; border-radius:8px; }
+    input, textarea { width:100%; padding:10px; margin-top:8px; border-radius:6px; border:none; background:#14171a; color:#fff;}
+    button { background:#238636; color:white; padding:10px 14px; border:none; border-radius:6px; cursor:pointer; }
+    .small { color:#9aa5b1; font-size:14px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button onclick="history.back()">Back</button>
+    <div class="job-card" id="jobCard">
+      Loading...
+    </div>
+
+    <h3 style="margin-top:18px;">Apply to this job</h3>
+    <form id="applyForm">
+      <label class="small">Resume Link (Google Drive or URL)</label>
+      <input id="resumeLink" placeholder="https://drive.google.com/..." required>
+
+      <label class="small">Cover Letter (optional)</label>
+      <textarea id="coverLetter" rows="6" placeholder="Write a short message to the employer"></textarea>
+
+      <button type="submit" id="applyBtn">Submit Application</button>
+    </form>
+  </div>
+
+  <script src="/js/job_view.js"></script>
+</body>
+</html>

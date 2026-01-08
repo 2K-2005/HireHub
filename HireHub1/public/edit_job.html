@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Edit Job - HireHub</title>
+
+<style>
+  body { background:#0d1117; color:white; font-family:Arial; }
+  .container {
+    max-width:700px;
+    margin:40px auto;
+    padding:25px;
+    background:#161b22;
+    border-radius:10px;
+  }
+
+  input, textarea, select {
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    border:none;
+    border-radius:6px;
+    background:#1f2530;
+    color:white;
+  }
+
+  textarea { height:120px; }
+
+  .btn {
+    padding:10px 16px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    margin-top:15px;
+    color:white;
+    font-size:15px;
+  }
+
+  #saveBtn { background:#238636; }
+  #backBtn { background:#3498db; float:right; }
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+  <button id="backBtn" onclick="goBack()">Back</button>
+
+  <h1>Edit Job</h1>
+  <p>Update your job details and save changes.</p>
+
+  <form id="jobForm">
+
+    <label>Job Title</label>
+    <input id="title" required>
+
+    <label>Category</label>
+    <select id="jobType" required>
+      <option value="Job">Job</option>
+      <option value="Internship">Internship</option>
+    </select>
+
+    <label>Location</label>
+    <input id="location">
+
+    <label>Salary</label>
+    <input id="salary">
+
+    <label>Description</label>
+    <textarea id="description"></textarea>
+
+    <button id="saveBtn" type="submit" class="btn">Save Changes</button>
+
+  </form>
+
+</div>
+
+<script src="/js/edit_job.js"></script>
+
+</body>
+</html>

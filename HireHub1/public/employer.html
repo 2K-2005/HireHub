@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Employer Profile - HireHub</title>
+
+<style>
+  body { background:#0d1117; color:white; font-family:Arial; }
+  .container { max-width:900px; margin:40px auto; padding:25px; background:#161b22; border-radius:10px; }
+  input, textarea { width:100%; padding:10px; margin:8px 0; border-radius:6px; border:none; background:#1f2530; color:white; }
+  button { padding:10px 15px; background:#238636; border:none; border-radius:6px; cursor:pointer; }
+  #logoutBtn { background:#b93737; margin-left:15px; }
+  
+  label { font-weight:bold; }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Employer Profile</h1>
+
+  <button onclick="window.location='dashboard.html'">Back to Dashboard</button>
+  <button id="logoutBtn">Logout</button>
+
+  <form id="profileForm" style="margin-top:20px;">
+
+    <label>Company Name</label>
+    <input id="companyName">
+
+    <label>Phone</label>
+    <input id="phone">
+
+    <label>Location</label>
+    <input id="location">
+
+    <label>Industry</label>
+    <input id="industry">
+
+    <label>Company Size</label>
+    <input id="size">
+
+    <label>Website</label>
+    <input id="website">
+
+    <label>Description</label>
+    <textarea id="description"></textarea>
+
+    <label>Job Requirements</label>
+    <textarea id="requirements"></textarea>
+
+    <label>About HR</label>
+    <textarea id="aboutHR"></textarea>
+
+    <label>LinkedIn</label>
+    <input id="linkedin">
+
+    <button type="submit" style="margin-top:20px;">Save Profile</button>
+  </form>
+</div>
+
+<script src="/js/employer.js"></script>
+
+</body>
+</html>

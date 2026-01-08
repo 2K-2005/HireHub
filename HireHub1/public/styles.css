@@ -1,0 +1,10 @@
+body { font-family: Arial, sans-serif; background:#0d1117; color:#fff; margin:0; }
+.container { max-width:1100px; margin:32px auto; padding:20px; background:#0f1720; border-radius:8px; }
+a { color:#58a6ff; text-decoration:none; }
+button { cursor:pointer; border:none; border-radius:6px; padding:10px 14px; }
+input, textarea, select { width:100%; padding:10px; margin:8px 0; border-radius:6px; border:1px solid #252A33; background:#121316; color:#fff; box-sizing:border-box;}
+header, nav { padding:16px; background:#0b0f13; border-bottom:1px solid #111316; }
+.nav-container { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; }
+.btn-login, .btn-signup { padding:8px 12px; border-radius:6px; margin-left:8px; color:#fff; }
+.btn-signup { background:#00c29a; color:#02120d; }
+.small { font-size:12px; color:#9aa5b1; }

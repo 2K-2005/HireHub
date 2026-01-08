@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Jobs - HireHub</title>
+
+<style>
+  body { background:#0d1117; color:white; font-family:Arial; }
+  .container { max-width:900px; margin:40px auto; padding:25px; background:#161b22; border-radius:10px; }
+
+  .job-card {
+    background:#1f2530;
+    padding:15px;
+    border-radius:8px;
+    margin-bottom:15px;
+  }
+
+  .btn-edit {
+    background:#2980b9;
+    padding:8px 12px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    color:white;
+  }
+
+  .btn-delete {
+    background:#c0392b;
+    padding:8px 12px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    color:white;
+    margin-left:10px;
+  }
+
+  #backBtn {
+    background:#3498db;
+    padding:8px 14px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    float:right;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <button id="backBtn" onclick="goBack()">Back to Dashboard</button>
+
+  <h1>Your Created Jobs</h1>
+  <p>Below are all the jobs you have created.</p>
+
+  <div id="jobsContainer">Loading...</div>
+
+</div>
+
+<script src="/js/job_list.js"></script>
+
+</body>
+</html>

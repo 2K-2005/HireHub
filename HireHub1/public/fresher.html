@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Fresher Profile - HireHub</title>
+  <link rel="stylesheet" href="/styles.css">
+  <style>.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head>
+<body>
+<header style="padding:12px;background:#071019">
+  <div class="nav-container">
+    <div>💼 HireHub</div>
+    <div>
+      <a href="/dashboard.html" class="small">Dashboard</a>
+      <button id="logoutBtn" style="background:#b93737;margin-left:8px">Logout</button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <h2>Fresher Profile (Create / Update)</h2>
+  <form id="profileForm">
+    <label>Name</label>
+    <input id="name" required>
+    <input id="email" type="email" hidden>
+    <div class="form-grid">
+      <div>
+        <label>Phone</label>
+        <input id="phone">
+      </div>
+      <div>
+        <label>Location</label>
+        <input id="location">
+      </div>
+    </div>
+    <label>Headline</label>
+    <input id="headline">
+    <label>Skills (comma separated)</label>
+    <input id="skills" placeholder="JavaScript, Node.js, React">
+    <label>Education (text or JSON)</label>
+    <textarea id="education"></textarea>
+    <label>Projects (text or JSON)</label>
+    <textarea id="projects"></textarea>
+    <label>GitHub</label>
+    <input id="github">
+    <label>LinkedIn</label>
+    <input id="linkedin">
+    <label>Resume link</label>
+    <input id="resumeLink">
+    <label>About</label>
+    <textarea id="about"></textarea>
+    <button type="submit" style="background:#238636;margin-top:12px">Save Profile</button>
+  </form>
+</main>
+
+<script src="/js/fresher.js"></script>
+</body>
+</html>

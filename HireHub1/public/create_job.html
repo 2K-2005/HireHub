@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Create Job - HireHub</title>
+
+<style>
+  body { background:#0d1117; color:white; font-family:Arial; }
+  .container { max-width:700px; margin:40px auto; padding:25px; background:#161b22; border-radius:10px; }
+  label { margin-top:12px; display:block; font-size:16px; }
+  input, textarea, select { 
+    width:100%; padding:10px; border-radius:6px; margin-top:5px; 
+    background:#1f2530; color:white; border:none;
+  }
+  button {
+    background:#238636; padding:12px 20px; border:none;
+    margin-top:20px; border-radius:6px; cursor:pointer;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Create Job Listing</h2>
+    <button onclick="window.location='dashboard.html'">Back</button>
+  <form id="jobForm">
+    
+    <label>Job Type</label>
+    <select id="jobType" required>
+      <option value="">Select Job Type</option>
+      <option value="internship">Internship</option>
+      <option value="job">Full-Time Job</option>
+    </select>
+
+    <label>Job Title</label>
+    <input id="title" required placeholder="Job Title">
+
+    <label>Description</label>
+    <textarea id="description" rows="4" placeholder="Description" required></textarea>
+
+    <label>Qualifications</label>
+    <textarea id="qualifications" rows="3" placeholder="Qualification"></textarea>
+
+    <label>Our Requirements</label>
+    <textarea id="requirements" rows="3" placeholder="Requirements"></textarea>
+
+    <label>Responsibilities</label>
+    <textarea id="responsibilities" rows="3" placeholder="Responsibilities"></textarea>
+
+    <label>Location</label>
+    <input id="location" placeholder="Location">
+
+    <label>Salary Range</label>
+    <input id="salary" placeholder="Salary">
+
+    <button type="submit">Create Job</button>
+  </form>
+</div>
+
+<script src="/js/create_job.js"></script>
+</body>
+</html>

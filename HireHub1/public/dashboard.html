@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard - HireHub</title>
+
+<style>
+  body { background:#0d1117; color:white; font-family:Arial; }
+  .container { max-width:900px; margin:40px auto; padding:25px; background:#161b22; border-radius:10px; }
+
+  /* Buttons Row */
+  .top-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .btn-small {
+    padding:8px 14px; 
+    border:none; 
+    border-radius:6px; 
+    cursor:pointer;
+    color:white;
+    font-size:14px;
+  }
+
+  #logoutBtn { background:#c0392b; }
+  #createJobBtn { background:#238636; display:none; }
+  #savedJobBtn { background:#3498db; display:none; }
+  #findJobBtn { background:#9b59b6; display:none; }
+  #manageCandidatesBtn {
+  background: #8e44ad;  /* Purple */
+} /* NEW for Fresher */
+
+  .card { background:#1f2530; padding:20px; border-radius:8px; margin-top:20px; }
+  .btn { background:#238636; padding:10px 15px; border:none; color:white; border-radius:6px; cursor:pointer; margin-top:15px; }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- Buttons Row -->
+  <div class="top-buttons">
+
+    <!-- 🔥 Fresher Button -->
+    <button id="findJobBtn" class="btn-small">Find Jobs</button>
+
+    <button id="manageCandidatesBtn" class="btn-small" style="display:none;">
+    Manage Candidates
+  </button>
+    <!-- 🔥 Employer Buttons -->
+    <button id="savedJobBtn" class="btn-small">Saved Jobs</button>
+    <button id="createJobBtn" class="btn-small">Create Job</button>
+    
+    <!-- Common Button -->
+    <button id="logoutBtn" class="btn-small">Logout</button>
+  </div>
+
+  <h1>Welcome, <span id="usernameDisplay"></span></h1>
+  <p>Your role: <b id="roleDisplay"></b></p>
+
+  <button id="openProfileBtn" class="btn"></button>
+
+  <h2 style="margin-top:30px;">Your Profile Details</h2>
+  <div id="profileContainer" class="card">
+    Loading profile...
+  </div>
+
+</div>
+
+<script src="/js/dashboard.js"></script>
+
+</body>
+</html>
